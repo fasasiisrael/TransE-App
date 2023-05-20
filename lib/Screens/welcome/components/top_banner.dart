@@ -17,7 +17,7 @@ class TopBanner extends StatelessWidget {
           bottomRight: Radius.circular(30),
         ),
         child: Image.asset(
-          'assets/images/welcome.jpg',
+          'assets/images/welcome.jpeg',
           height: size.height * 0.5,
           fit: BoxFit.cover,
         ),
