@@ -7,6 +7,7 @@ class Place {
   final String location;
   final String image;
   final double rating;
+  final List<String> hotelImages;
 
   Place({
     @required this.id,
@@ -15,6 +16,7 @@ class Place {
     @required this.location,
     @required this.image,
     @required this.rating,
+    @required this.hotelImages,
   });
 }
 
@@ -27,7 +29,13 @@ List<Place> demoPlaces = [
     description: 'Paris, the capital of France, is one of the most popular tourist destinations in the world. The city is home to world-renowned landmarks such as the Eiffel Tower, the Louvre Museum, and the Notre Dame Cathedral. Paris is also known for its art, fashion, and cuisine.',
     location: 'Paris, France 🇫🇷 ',
     image: 'assets/images/place1.jpg',
-    rating: 4
+    rating: 4,
+    hotelImages: [
+      'assets/images/france1.jpg',
+      'assets/images/france2.jpeg',
+      'assets/images/france3.jpg',
+      'assets/images/france4.jpg',
+    ],
   ),
   Place(
     id: 2,
@@ -35,15 +43,27 @@ List<Place> demoPlaces = [
     description: 'Brussels is the capital of Belgium and is one of the most popular tourist destinations in Europe. The city is home to many world-renowned landmarks, such as the Grand Place, the Atomium, and the Manneken Pis. Brussels is also known for its beer, chocolate, and waffles.',
     location: 'Brussel, Germany 🇧🇪 ',
     image: 'assets/images/place2.jpg',
-    rating: 3
+    rating: 3,
+    hotelImages: [
+      'assets/images/germany1.jpg',
+      'assets/images/germany2.jpg',
+      'assets/images/germany3.jpg',
+      'assets/images/germany4.jpg',
+    ],
   ),
   Place(
     id: 3,
     name: 'Visit Hong-Kong',
-    description: 'Hong Kong is a special administrative region of China, located on the eastern Pearl River Delta in South China. With 7.5 million residents of various nationalities in a 1,104-square-kilometre (426 sq mi) territory, Hong Kong is one of the most densely populated places in the world. Hong Kong is also a major global financial centre and one of the most developed cities in the world.',
+    description: 'Hong Kong is a special administrative China, located on the eastern Pearl River Delta in South China. With 7.5 million residents of various nationalities in a 1,104-square-kilometre (426 sq mi) territory, Hong Kong is one of the most densely populated places in the world. Hong Kong is also a major global financial centre and one of the most developed cities in the world.',
     location: 'Hong-Kong 🇨🇳',
     image: 'assets/images/place3.jpg',
-    rating: 5
+    rating: 5,
+    hotelImages: [
+      'assets/images/china1.jpg',
+      'assets/images/china2.jpg',
+      'assets/images/china3.jpg',
+      'assets/images/china4.jpg',
+    ],
   ),
   Place(
     id: 4,
@@ -51,6 +71,12 @@ List<Place> demoPlaces = [
     description: 'Hong Kong is a special administrative region of China, located on the eastern Pearl River Delta in South China. With 7.5 million residents of various nationalities in a 1,104-square-kilometre (426 sq mi) territory, Hong Kong is one of the most densely populated places in the world. Hong Kong is also a major global financial centre and one of the most developed cities in the world.',
     location: 'Amsterdan, Nethrlands 🇳🇱',
     image: 'assets/images/place4.jpg',
-    rating: 3
+    rating: 3,
+    hotelImages: [
+      'assets/images/amster1.jpg',
+      'assets/images/amster2.jpg',
+      'assets/images/amster3.jpg',
+      'assets/images/amster4.jpg',
+    ],
   ),
 ];

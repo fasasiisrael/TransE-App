@@ -22,76 +22,98 @@ class PlaceInformation extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return DelayedDisplay(
-      delay: Duration(milliseconds: 100),
-      fadingDuration: Duration(milliseconds: 300),
-      slidingBeginOffset: const Offset(0, 1),
+        delay: Duration(milliseconds: 100),
+    fadingDuration: Duration(milliseconds: 300),
+    slidingBeginOffset: const Offset(0, 1),
 
-      child: Container(
-        height: size.height * 0.7,
-        width: double.infinity,
-        margin: EdgeInsets.only(top: size.height * 0.35),
-        padding: EdgeInsets.all(30),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(35),
-            topRight: Radius.circular(35),
-          ),
-          color: Colors.white
-        ),
+    child: Container(
+    height: size.height * 0.7,
+    width: double.infinity,
+    margin: EdgeInsets.only(top: size.height * 0.35),
+    padding: EdgeInsets.all(30),
+    decoration: BoxDecoration(
+    borderRadius: BorderRadius.only(
+    topLeft: Radius.circular(35),
+    topRight: Radius.circular(35),
+    ),
+    color: Colors.white
+    ),
 
-        child: SingleChildScrollView(
-          child: SafeArea(
-            top: false,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  place.name,
-                  style: TextStyle(
-                    fontSize: isTab(context) ? 32 : 24,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
+    child: SingleChildScrollView(
+    child: SafeArea(
+    top: false,
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Text(
+    place.name,
+    style: TextStyle(
+        fontSize: isTab(context) ? 32 : 24,
+        fontWeight: FontWeight.bold
+    ),
+    ),
 
-                SizedBox(height: 5),
+    SizedBox(height: 20),
 
-                Location(place: place),
+    Text(
+    place.description,
+    style: TextStyle(
+    fontSize: isTab(context) ? 20 : 16,
+    ),
+    ),
 
-                SizedBox(height: 10),
+    SizedBox(height: 30),
 
-                Rating(place: place),
+    Text(
+    'Hotels',
+    style: TextStyle(
+    fontSize: isTab(context) ? 28 : 20,
+    fontWeight: FontWeight.w700
+    ),
+    ),
 
-                SizedBox(height: 25),
+    SizedBox(height: 20),
 
-                DaysChooser(),
+    Container(
+    height: 200,
+    child: PageView.builder(
+    itemCount: place.hotelImages.length,
+    itemBuilder: (BuildContext context, int index) {
+    return Padding(
+    padding: EdgeInsets.only(right: 10),
+    child: ClipRRect(
+    borderRadius: BorderRadius.circular(15),
+    child: Image.asset(
+    place.hotelImages[index],
+    fit: BoxFit.cover,
+    ),
+    ),
+    );
+    },
+    ),
+    ),
 
-                SizedBox(height: 30),
+      SizedBox(height: 30),
 
-                Text(
-                  'Description',
-                  style: TextStyle(
-                    fontSize: isTab(context) ? 28 : 20,
-                    fontWeight: FontWeight.w700
-                  ),
-                ),
+      Location(place: place),
 
-                SizedBox(height: 20),
+      SizedBox(height: 10),
 
-                Text(
-                  place.description,
-                  style: TextStyle(
-                    fontSize: isTab(context) ? 20 : 16,
-                  ),
-                ),
+      Rating(place: place),
 
-                SizedBox(height: 50),
+      SizedBox(height: 25),
 
-                PriceAndBook()
-              ],
-            ),
-          ),
-        ),
-      ),
+      DaysChooser(),
+
+      SizedBox(height: 30),
+
+      PriceAndBook(),
+
+    ],
+    ),
+    ),
+    ),
+    ),
     );
   }
 }

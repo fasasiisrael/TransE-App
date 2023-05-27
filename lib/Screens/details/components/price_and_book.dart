@@ -46,9 +46,10 @@ class PriceAndBook extends StatelessWidget {
           )
         ),
 
-        CommonButton(
-          tapEvent: () {},
-        )
+        CommonButton(url: 'https://www.booking.com/attractions/searchresults/fr/paris.html'),
+        CommonButton(url: 'https://www.booking.com/attractions/searchresults/de/berlin.html'),
+        CommonButton(url: 'https://www.booking.com/attractions/searchresults/hk/hong-kong.html'),
+        CommonButton(url: 'https://www.booking.com/attractions/searchresults/nl/amsterdam.html'),
       ],
     );
   }

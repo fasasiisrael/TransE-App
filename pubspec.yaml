@@ -32,6 +32,7 @@ dependencies:
   flutter_svg: ^0.19.3 # this will help us to render svg
   smooth_star_rating: ^1.1.1 # this will help us to add star rating system
   delayed_display: ^1.1.0 # this will help us to add animations
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_test:
