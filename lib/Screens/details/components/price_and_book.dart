@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/components/common_button.dart';
 import 'package:travel_app/constants.dart';
 import 'package:travel_app/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PriceAndBook extends StatelessWidget {
   const PriceAndBook({
@@ -15,41 +16,50 @@ class PriceAndBook extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: "\$400",
-                style: TextStyle(
-                  fontSize: isTab(context) ? 34 : 28,
-                  fontWeight: FontWeight.w700,
-                  color: kPrimaryColor
-                )
-              ),
+            text: TextSpan(
+                children: [
+                  TextSpan(
+                      text: "",
+                      style: TextStyle(
+                          fontSize: isTab(context) ? 10 : 8,
+                          fontWeight: FontWeight.w700,
+                          color: kPrimaryColor
+                      )
+                  ),
 
-              TextSpan(
-                text: "/",
-                style: TextStyle(
-                  fontSize: isTab(context) ? 24 : 18,
-                  color: kPrimaryColor
-                )
-              ),
+                  TextSpan(
+                      text: "Want to find out more?",
+                      style: TextStyle(
+                          fontSize: isTab(context) ? 15 : 12,
+                          color: kPrimaryColor
+                      )
+                  ),
 
-              TextSpan(
-                text: "Package",
-                style: TextStyle(
-                  fontSize: isTab(context) ? 22 : 16,
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w800
-                )
-              ),
-            ]
-          )
+                  TextSpan(
+                      text: "",
+                      style: TextStyle(
+                          fontSize: isTab(context) ? 9 : 6,
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.w800
+                      )
+                  ),
+                ]
+            )
         ),
 
-        CommonButton(url: 'https://www.booking.com/attractions/searchresults/fr/paris.html'),
-        CommonButton(url: 'https://www.booking.com/attractions/searchresults/de/berlin.html'),
-        CommonButton(url: 'https://www.booking.com/attractions/searchresults/hk/hong-kong.html'),
-        CommonButton(url: 'https://www.booking.com/attractions/searchresults/nl/amsterdam.html'),
+        CommonButton(
+          tapEvent: () async {
+            // Get the URL to open.
+            const url = 'https://www.booking.com/attractions/index.en-us.html';
+
+            // Try to open the URL.
+            try {
+              launch(url);
+            } catch (e) {
+              // Handle the error.
+            }
+          },
+        )
       ],
     );
   }

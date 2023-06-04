@@ -93,6 +93,40 @@ class PlaceInformation extends StatelessWidget {
     ),
     ),
 
+
+
+      SizedBox(height: 30),
+
+      Text(
+        'Places to visit',
+        style: TextStyle(
+            fontSize: isTab(context) ? 28 : 20,
+            fontWeight: FontWeight.w700
+        ),
+      ),
+
+      SizedBox(height: 20),
+
+      Container(
+        height: 200,
+        child: PageView.builder(
+          itemCount: place.places.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: EdgeInsets.only(right: 10),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  place.places[index],
+                  fit: BoxFit.cover,
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+
+
       SizedBox(height: 30),
 
       Location(place: place),

@@ -8,6 +8,7 @@ class Place {
   final String image;
   final double rating;
   final List<String> hotelImages;
+  final List<String> places;
 
   Place({
     @required this.id,
@@ -17,6 +18,7 @@ class Place {
     @required this.image,
     @required this.rating,
     @required this.hotelImages,
+    @required this.places,
   });
 }
 
@@ -36,6 +38,12 @@ List<Place> demoPlaces = [
       'assets/images/france3.jpg',
       'assets/images/france4.jpg',
     ],
+    places: [
+      'assets/images/pfrance1.jpg',
+      'assets/images/pfrance2.jpeg',
+      'assets/images/pfrance3.jpg',
+      'assets/images/pfrance4.jpg',
+    ],
   ),
   Place(
     id: 2,
@@ -49,6 +57,12 @@ List<Place> demoPlaces = [
       'assets/images/germany2.jpg',
       'assets/images/germany3.jpg',
       'assets/images/germany4.jpg',
+    ],
+    places: [
+      'assets/images/pgermany1.jpg',
+      'assets/images/pgermany2.jpg',
+      'assets/images/pgermany3.jpg',
+      'assets/images/pgermany4.jpg',
     ],
   ),
   Place(
@@ -64,6 +78,12 @@ List<Place> demoPlaces = [
       'assets/images/china3.jpg',
       'assets/images/china4.jpg',
     ],
+    places: [
+      'assets/images/pchina1.jpg',
+      'assets/images/pchina2.jpg',
+      'assets/images/pchina3.jpg',
+      'assets/images/pchina4.jpg',
+    ],
   ),
   Place(
     id: 4,
@@ -77,6 +97,12 @@ List<Place> demoPlaces = [
       'assets/images/amster2.jpg',
       'assets/images/amster3.jpg',
       'assets/images/amster4.jpg',
+    ],
+    places: [
+      'assets/images/pamster1.jpg',
+      'assets/images/pamster2.jpg',
+      'assets/images/pamster3.jpg',
+      'assets/images/pamster4.jpg',
     ],
   ),
 ];
